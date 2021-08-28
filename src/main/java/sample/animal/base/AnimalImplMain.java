@@ -26,6 +26,9 @@ public class AnimalImplMain {
         //B-1 and 2
         // This method will show fish characteristics, and specialization either shark or clownfish
         fishCharacteristics();
+
+        //B3 - This method will show dolphin characteristics
+        dolphinCharacteristics();
     }
 
     /**
@@ -170,6 +173,17 @@ public class AnimalImplMain {
         animalChars.setEatsFish(false);
         animalChars.setTellsJokes(true);
         return animalChars;
+    }
+
+    /**
+     * Item # b3 : Model a dolphin without extending fish class
+     */
+    private static void dolphinCharacteristics () {
+        System.out.println("***** Model a dolphin *****");
+        Dolphin dolphin = new Dolphin("Dolphin");
+        dolphin.eat();
+        dolphin.makeSound();
+        dolphin.swim();
     }
 
 }
