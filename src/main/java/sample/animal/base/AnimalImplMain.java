@@ -1,8 +1,6 @@
 package sample.animal.base;
 
-import sample.animal.kind.Bird;
-import sample.animal.kind.Chicken;
-import sample.animal.kind.Duck;
+import sample.animal.kind.*;
 import sample.vo.AnimalChars;
 
 
@@ -17,6 +15,9 @@ public class AnimalImplMain {
         //2. This method will show Chicken and Duck characteristics as well as their special sound
         duckCharacteristics();
         chickenCharacteristics();
+
+        //3. This method will rooster's characteristics and its relation to chicken
+        roosterCharacteristics();
     }
 
     /**
@@ -68,6 +69,39 @@ public class AnimalImplMain {
         chicken.printKind();
         chicken.walk();
         chicken.makeSound();
+    }
+
+    /**
+     * this is for item #3
+     * Model a rooster that make a sound 'Cock a doodle doo'
+     * How is the rooster related to the chicken
+     * Other ways without using inheritance
+     */
+    private static void roosterCharacteristics () {
+        System.out.println("***** Model a rooster *****");
+        animalChars.setKind("Rooster");
+        String roosterStr = animalChars.getKind();
+        Rooster rooster = new Rooster(roosterStr);
+        rooster.printKind();
+        rooster.walk();
+        rooster.makeSound();
+
+        // chicken and rooster are both birds, they eat worms!
+        checkRelation();
+
+
+    }
+
+    private static void eat(BaseBird bird) {
+        bird.eat();
+    }
+
+    private static void checkRelation() {
+        Chicken chicken = new Chicken("Chicken");
+        Rooster rooster = new Rooster("Rooster");
+
+        eat(chicken);
+        eat(rooster);
     }
 
 }
