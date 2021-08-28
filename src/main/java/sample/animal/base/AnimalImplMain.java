@@ -4,6 +4,8 @@ import sample.animal.constants.FishValidationConstant;
 import sample.animal.kind.*;
 import sample.vo.AnimalChars;
 
+import java.util.ArrayList;
+
 
 public class AnimalImplMain {
 
@@ -32,6 +34,9 @@ public class AnimalImplMain {
 
         //C1 and 2
         butterflyTransformation();
+
+        // E - animal count
+        getAnimalCount();
     }
 
     /**
@@ -196,6 +201,33 @@ public class AnimalImplMain {
         System.out.println("****** Caterpillar transforms to a butterfly *****");
         Butterfly butterfly = new Butterfly("Butterfly");
         butterfly.metamorphosis("Butterfly");
+    }
+
+    private static void getAnimalCount() {
+        ArrayList<Animal> animals = new ArrayList<Animal>();
+        animals.add(new Cat("Cat"));
+        animals.add(new Dog("Dog"));
+        animals.add(new Bird("Bird"));
+        animals.add(new Chicken("Chicken"));
+        animals.add(new Dolphin("Dolphin"));
+        animals.add(new Duck("Duck"));
+        animals.add(new Fish("Fish"));
+        animals.add(new Parrot("Parrot"));
+        animals.add(new Rooster("Rooster"));
+        animals.add(new Butterfly("Butterfly"));
+
+        long countFly = animals.stream().filter(a -> (a instanceof Swim)
+        || (a instanceof Insect && ((Insect) a).fly())).count();
+        long countWalk = animals.stream().filter(a -> (a instanceof Walk)
+                || (a instanceof Insect && ((Insect) a).walk())).count();
+        long countSing = animals.stream().filter(a -> a instanceof Sing).count();
+        long countSwim = animals.stream().filter(a -> a instanceof Swim).count();
+
+        System.out.println("Total number of animals that can fly : " + countFly);
+        System.out.println("Total number of animals that can walk : " + countWalk);
+        System.out.println("Total number of animals that can swim : " + countSwim);
+        System.out.println("Total number of animals that can sing : " + countSing);
+
     }
 
 }
