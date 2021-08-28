@@ -1,6 +1,7 @@
 package sample.animal.base;
 
 import sample.animal.constants.FishValidationConstant;
+import sample.animal.constants.RoosterLangConstants;
 import sample.animal.kind.*;
 import sample.vo.AnimalChars;
 
@@ -35,8 +36,12 @@ public class AnimalImplMain {
         //C1 and 2
         butterflyTransformation();
 
-        // E - animal count
+        // D - animal count
         getAnimalCount();
+
+        // Bonus 1 : This will show other languages of the rooster
+        String roosterSound = getRoosterSoundPerLanguage("Filipino");
+        System.out.println("Returned sound is : " + roosterSound);
     }
 
     /**
@@ -228,6 +233,17 @@ public class AnimalImplMain {
         System.out.println("Total number of animals that can swim : " + countSwim);
         System.out.println("Total number of animals that can sing : " + countSing);
 
+    }
+
+    /**
+     * BONUS part
+     * get the rooster sound depending on the given language
+     * @return
+     */
+    public static String getRoosterSoundPerLanguage(String language) {
+
+        System.out.println("***** Getting the rooster sound for language " + language + " ******");
+        return RoosterLangConstants.getRooseterSoundPerLang(language);
     }
 
 }
