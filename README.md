@@ -14,3 +14,5 @@ Date : April 19, 2020
    - consist on the common getter/setter
 6. Interfaces, since not all animals possess same characteristics, I created separate interfaces for each vital traits. This is
 to implement the specific traits only to the animals that possess this.
+7. Controller - this shows (commented) API for querying animals and their characteristics. The idea is 
+from the controller, a method to get details is called from the service and return the List of AnimalChars objects.
