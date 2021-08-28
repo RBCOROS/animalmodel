@@ -16,8 +16,11 @@ public class AnimalImplMain {
         duckCharacteristics();
         chickenCharacteristics();
 
-        //3. This method will rooster's characteristics and its relation to chicken
+        //3. This method will show rooster's characteristics and its relation to chicken
         roosterCharacteristics();
+
+        //4. This method will show parrot's characteristics and sound depending on where it live.
+        parrotSound();
     }
 
     /**
@@ -102,6 +105,23 @@ public class AnimalImplMain {
 
         eat(chicken);
         eat(rooster);
+    }
+
+    /**
+     * Item #4
+     * parrot with makes sounds
+     */
+    private static void parrotSound () {
+        System.out.println("***** Parrot that makes sounds depends on the environment! *****");
+        Parrot parrot = new Parrot("Parrot");
+        // parrot who lives with dogs
+        Dog dog = new Dog("Dog");
+        parrot.makeSound(dog);
+        // parrot who lives with cats
+        Cat cat = new Cat("Cat");
+        parrot.makeSound(cat);
+        Rooster rooster = new Rooster("Rooster");
+        parrot.makeSound(rooster);
     }
 
 }
